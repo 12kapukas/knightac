@@ -141,9 +141,7 @@ export default function Page() {
                 <img src="/hero.jpg" alt="" onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }} />
               </div>
               <div className="hero-body">
-                <span className="badge"><span className="dot" /> LIVE</span>
                 <h1>KNIGHT<span className="grad">ROOT</span></h1>
-                <div className="marquee"><span>PIN • SCAN • LOGS • PIN • SCAN • LOGS • PIN • SCAN • LOGS •&nbsp;</span></div>
                 <div className="row" style={{ marginTop: 14 }}>
                   <a href={EXE} style={{ flex: 1, textDecoration: "none" }}><button style={{ width: "100%" }}>⬇ KnightRoot.exe</button></a>
                 </div>
@@ -213,13 +211,13 @@ export default function Page() {
                       ))}
                       {used.map((s) => (
                         <div key={s.pin} className="result" style={{ opacity: .8 }}>
-                          <span className="badge"><span className="dot used" /> USED — panaudotas</span> <b style={{ letterSpacing: 2 }}>{s.pin}</b>
+                          <span className="badge"><span className="dot used" /> USED</span> <b style={{ letterSpacing: 2 }}>{s.pin}</b>
                           <div className="small">{s.playerName}</div>
                         </div>
                       ))}
                       {expired.map((s) => (
                         <div key={s.pin} className="result" style={{ opacity: .65 }}>
-                          <span className="badge"><span className="dot expired" /> EXPIRED — nebegalioja</span> <b style={{ letterSpacing: 2 }}>{s.pin}</b>
+                          <span className="badge"><span className="dot expired" /> EXPIRED</span> <b style={{ letterSpacing: 2 }}>{s.pin}</b>
                           <div className="small">{s.playerName}</div>
                         </div>
                       ))}

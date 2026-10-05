@@ -39,7 +39,7 @@ export function signToken(payload: object, days = 7): string {
   const exp = Math.floor(Date.now() / 1000) + days * 86400;
   const body = base64url(JSON.stringify({ ...payload, exp }));
   const sig = base64url(createHash("sha256").update(`${header}.${body}.${secret()}`).digest());
-  // pastaba: paprastas HMAC pakaitalas be createHmac import problemų — stabilus Vercel
+  // simple HMAC stand-in without createHmac import issues - stable on Vercel
   return `${header}.${body}.${sig}`;
 }
 
