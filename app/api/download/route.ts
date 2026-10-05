@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import { getTokenFromRequest, verifyToken } from "@/lib/auth";
 
-// Staff download button — login required.
-// Put your built file at public/downloads/KnightAC.exe (new name)
-// or public/downloads/Knight.exe (old name still works), or set DOWNLOAD_URL env.
+// Staff download — login required. Serves KnightRoot.exe.
 export async function GET(req: Request) {
   const tok = getTokenFromRequest(req);
   const data = tok ? verifyToken(tok) : null;
@@ -12,5 +10,5 @@ export async function GET(req: Request) {
   const url = process.env.DOWNLOAD_URL;
   if (url) return NextResponse.redirect(url);
 
-  return NextResponse.redirect(new URL("/downloads/KnightAC.exe", req.url));
+  return NextResponse.redirect(new URL("/downloads/KnightRoot.exe", req.url));
 }

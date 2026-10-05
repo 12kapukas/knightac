@@ -1,8 +1,8 @@
-import { NextResponse } from "next/server";
+﻿import { NextResponse } from "next/server";
 import { getSession } from "@/lib/store";
 
 // PUBLIC: GET /api/sessions/pinfile?pin=AB12CD -> downloads pin.txt
-// Player puts pin.txt next to KnightAC.exe -> scanner auto-fills the code.
+// Player puts pin.txt next to KnightRoot.exe -> scanner auto-fills the code.
 export async function GET(req: Request) {
   const url = new URL(req.url);
   const pin = (url.searchParams.get("pin") || "").trim().toUpperCase();
@@ -15,3 +15,4 @@ export async function GET(req: Request) {
     }
   });
 }
+

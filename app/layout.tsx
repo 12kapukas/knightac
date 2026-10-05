@@ -1,8 +1,8 @@
 import "./globals.css";
 
 export const metadata = {
-  title: "KnightAC — Screenshare Scanner",
-  description: "KnightAC — staff generates a PIN link, player runs KnightAC, logs land in your dashboard."
+  title: "KnightRoot",
+  description: "KnightRoot — PIN, scan, logs."
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

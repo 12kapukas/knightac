@@ -5,7 +5,7 @@ import { createSession } from "@/lib/store";
 function siteUrl(req: Request): string {
   const env = (process.env.NEXT_PUBLIC_SITE_URL || "").trim();
   if (env) return env.replace(/\/$/, "");
-  const host = req.headers.get("x-forwarded-host") || req.headers.get("host") || "knightac.vercel.app";
+  const host = req.headers.get("x-forwarded-host") || req.headers.get("host") || "knightroot.vercel.app";
   const proto = req.headers.get("x-forwarded-proto") || "https";
   if (host.includes("localhost")) return `http://${host}`;
   return `https://${host}`;
